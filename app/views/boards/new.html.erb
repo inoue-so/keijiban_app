@@ -1,3 +1,10 @@
+<% if @board.errors.any? %>
+   <h2>some errors has occured.</h2>
+   <% @board.errors.full_messages.each do |e| %>
+     <%= e %>
+   <% end %>
+ <% end %>
+ 
 <%= form_for @board do |f| %>
  <%= f.text_field :name, placeholder: 'board name' %>
  <%= f.submit %>

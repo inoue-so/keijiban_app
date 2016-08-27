@@ -6,4 +6,25 @@
 
  <hr>
  
+ <h1>Comments</h1>
+ <% @board.comments.each do |c| %>
+   <p>
+   <%= c.content %>
+   <br>
+   <%= c.created_at.strftime("%Y/%M/%D") %>
+    <br>
+ +  <%= link_to 'delete', board_comment_path(@board, c), method: :delete, confirm: 'are you ok?' %>
+   </p>
+ <% end %>
+ 
+ <hr>
+ 
+ <h1>new comment</h1>
+ <%= form_for [@board, @board.comments.build] do |f| %>
+   <%= f.text_area :content %>
+   <%= f.submit %>
+ <% end %>
+ 
+ <hr>
+ 
  <%= link_to 'back to index', boards_path() %> 

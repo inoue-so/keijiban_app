@@ -9,8 +9,11 @@ class BoardsController < ApplicationController
 
   def create
      @board = Board.new params[:board]
-     @board.save
-     redirect_to board_path(@board)
+    if @board.save
+      redirect_to board_path(@board)
+    else
+      render :new
+    end
   end
 
   def show
@@ -23,8 +26,11 @@ class BoardsController < ApplicationController
 
   def update
      @board = Board.find(params[:id])
-　   @board.update_attributes(params[:board])
-     redirect_to board_path(@board)
+　   if @board.update_attributes(params[:board])
+       redirect_to board_path(@board)
+     else
+       render :edit
+     end
   end
 
   def destroy
@@ -32,4 +38,4 @@ class BoardsController < ApplicationController
     @board.destroy
     redirect_to boards_path
   end
-end
+

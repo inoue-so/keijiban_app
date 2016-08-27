@@ -3,7 +3,7 @@ class CreateBoards < ActiveRecord::Migration
     create_table :boards do |t|
       t.string :name
 
-      t.timestamps null: false
+      t.timestamps null: false, null: false
     end
   end
 end
