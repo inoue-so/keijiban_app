@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  COLUMN_NAME: 
+  COLUMN_NAME: 
+  COLUMN_NAME: 
+
+two:
+  COLUMN_NAME: 
+  COLUMN_NAME: 
+  COLUMN_NAME: 
