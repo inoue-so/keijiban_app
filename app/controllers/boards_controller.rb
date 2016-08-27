@@ -8,7 +8,8 @@ class BoardsController < ApplicationController
   end
 
   def create
-     @board = Board.new params[:board]
+     attr = params.require(:board).permit(:name, :login)
+    @board = Board.new(attr)
     if @board.save
       redirect_to board_path(@board)
     else
