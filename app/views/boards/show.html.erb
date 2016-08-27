@@ -1,2 +1,7 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1><%= @board.name %></h1>
+
+<%= link_to 'edit this board', edit_board_path(@board) %>
+ 
+ <hr>
+ 
+ <%= link_to 'back to index', boards_path() %> 
